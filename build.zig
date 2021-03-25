@@ -14,6 +14,8 @@ pub fn build(b: *std.build.Builder) void {
     const exe = b.addExecutable("test", "src/main.zig");
     // exe.setVerboseCC(true);
     exe.linkLibC();
+    exe.linkSystemLibrary("ws2_32");
+    exe.linkSystemLibrary("Iphlpapi");
     exe.setTarget(target);
     exe.setBuildMode(mode);
     exe.install();
