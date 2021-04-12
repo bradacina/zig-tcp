@@ -15,6 +15,8 @@ pub fn build(b: *std.build.Builder) void {
     // exe.setVerboseCC(true);
     exe.linkLibC();
     exe.linkSystemLibrary("ws2_32");
+    exe.linkSystemLibrary("ole32");
+    exe.linkSystemLibrary("oleaut32");
     exe.linkSystemLibrary("Iphlpapi");
     exe.setTarget(target);
     exe.setBuildMode(mode);
